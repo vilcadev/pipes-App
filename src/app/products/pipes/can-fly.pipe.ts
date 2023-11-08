@@ -8,19 +8,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 
 @Pipe({
-  name:'toggleCase'
+  name:'canFly'
 })
 // PipeTransform: Es el método que se va a llamar para hacer la transfor-
 // mación visual de la data.
-export class ToggleCasePipe implements PipeTransform{
+export class CanFlyPipe implements PipeTransform{
 
-  transform(value: string, toUpper:boolean =false):string {
+  transform(value: boolean): 'vuela' | 'no vuela' {
 
-    console.log({value,toUpper});
-
-    return (toUpper)
-    ? value.toLocaleUpperCase()
-    : value.toLowerCase();
+    return value? 'vuela' : 'no vuela';
   }
 
 }
